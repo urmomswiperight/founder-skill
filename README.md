@@ -6,7 +6,7 @@ signup, no API key, nothing to connect.
 `skills/founder-board` `skills/founder-marketing` `skills/founder-cfo`
 `skills/founder-consumer` `skills/founder-launch` `skills/founder-pricing`
 `skills/founder-offer` `skills/founder-competitors` `skills/founder-brand`
-`skills/founder-ops` `skills/founder-plan`
+`skills/founder-ops` `skills/founder-plan` `skills/founder-differentiation`
 
 One of them is your board of directors, trained on the frameworks of Alex
 Hormozi, Peter Thiel and Steve Jobs. One is your marketing director. One is your
@@ -56,6 +56,7 @@ The tools need Python 3.8 or newer. Nothing to pip install.
 | --- | --- | --- |
 | `/founder-board` | Board of Directors | Three board members, each a sub-agent applying one published framework (Offers, from *$100M Offers*; Monopoly, from *Zero to One*; Product, from Isaacson's *Steve Jobs*), score the idea, name what would kill it and vote. |
 | `/founder-competitors` | Competitor Scout | Maps direct competitors, indirect ones and substitutes from public sources, with prices, positioning and what their customers complain about, every fact linked. |
+| `/founder-differentiation` | Differentiation Strategist | The Purple Cow: applies Seth Godin and Eugene Schwartz's *Breakthrough Advertising* (sophistication stages 1 to 5, unique mechanism, concentration contrast table, concept-judo) to stand out in a field of 100 competitor cows. |
 | `/founder-consumer` | Consumer Panel | Spins up a swarm of buyer agents (100 by default) from your target customer, each with its own income, habits and objection, and tallies who buys, who doesn't and why. |
 | `/founder-pricing` | Pricing Strategist | Turns the panel's price answers into an acceptable price range, sets it against competitors and your margin, and picks what to test. |
 | `/founder-offer` | Offer Architect | Builds the offer stack (bonuses, guarantee, real urgency, a name) that answers the panel's objections, then re-tests it on the panel. |
@@ -72,7 +73,7 @@ Run them in this order. Each one reads what the others wrote, in a `founder/`
 folder in your project.
 
 ```
-board -> competitors -> consumer -> pricing -> offer -> cfo -> marketing -> brand -> ops -> launch -> plan
+board -> competitors -> differentiation -> consumer -> pricing -> offer -> cfo -> marketing -> brand -> ops -> launch -> plan
 ```
 
 An example: a matcha café in Toronto, iced matcha lattes at $6.50 a cup. (Every
@@ -83,25 +84,28 @@ input is in the example files in this repo, so you can run the tools on it.)
    fund, fund if, or pass. The conditions become a checklist for the rest.
 2. **`/founder-competitors`** maps the matcha bars and coffee shops within walking
    distance, what they charge for a latte and what their reviews complain about.
-3. **`/founder-consumer`** builds the target customer (urban professionals, 24 to
+3. **`/founder-differentiation`** diagnoses market sophistication (Stage 3),
+   names the brown cow compromise (bitter culinary powder masked with sugar),
+   and defines the Unique Mechanism (single-estate ceremonial cold-whisk).
+4. **`/founder-consumer`** builds the target customer (urban professionals, 24 to
    38, who buy coffee most days), deals 100 buyer cards across income, habits and
    objections, and runs one sub-agent per buyer. Back comes who buys, who passes,
    the reasons in their words ("my coffee place is closer", "$6.50 is steep for a
    drink") and what would flip a no.
-4. **`/founder-pricing`** reads the panel's four price answers per buyer into a
+5. **`/founder-pricing`** reads the panel's four price answers per buyer into a
    price range and checks $6.50 against it and against the competitors.
-5. **`/founder-offer`** answers the top objections with the offer (a launch-week
+6. **`/founder-offer`** answers the top objections with the offer (a launch-week
    price, a loyalty card) and re-runs a quick panel to see if the buy rate moves.
-6. **`/founder-cfo`** runs the unit economics. With the example numbers: each cup
+7. **`/founder-cfo`** runs the unit economics. With the example numbers: each cup
    leaves $4.76 after its own costs, break-even is 186 cups a day, the profit
    margin at the planned 383 cups a day is 38%, year 1 makes $93,926 on operations
    after a slow ramp, the $25,280 startup spend is earned back in month 8, and the
    founder needs $34,092 in cash before it pays for itself.
-7. **`/founder-marketing`**, **`/founder-brand`**, **`/founder-ops`** and
+8. **`/founder-marketing`**, **`/founder-brand`**, **`/founder-ops`** and
    **`/founder-launch`** turn it into a 30-day campaign, a name and a look, the
    suppliers and routines, and a dated launch that starts with a pop-up to test
    real buyers.
-8. **`/founder-plan`** compiles `founder/business-plan.md`. Its verdict is
+9. **`/founder-plan`** compiles `founder/business-plan.md`. Its verdict is
    computed, not written: Profitable only if every unit earns money, year 1 makes
    a profit, break-even fits capacity and enough of the panel buys.
 
@@ -166,18 +170,19 @@ confirms it.
 ## Files
 
 ```
-skills/founder-board/        SKILL.md, lenses.md
-skills/founder-competitors/  SKILL.md
-skills/founder-consumer/     SKILL.md, panel.py, customer.example.json, pitch.example.md
-skills/founder-pricing/      SKILL.md, van_westendorp.py
-skills/founder-offer/        SKILL.md
-skills/founder-cfo/          SKILL.md, unit_economics.py, example.json
-skills/founder-marketing/    SKILL.md
-skills/founder-brand/        SKILL.md
-skills/founder-ops/          SKILL.md
-skills/founder-launch/       SKILL.md
-skills/founder-plan/         SKILL.md, compile.py
-tests/                       the tests for every tool
+skills/founder-board/           SKILL.md, lenses.md
+skills/founder-competitors/     SKILL.md
+skills/founder-differentiation/ SKILL.md, breakthrough.md
+skills/founder-consumer/        SKILL.md, panel.py, customer.example.json, pitch.example.md
+skills/founder-pricing/         SKILL.md, van_westendorp.py
+skills/founder-offer/           SKILL.md
+skills/founder-cfo/             SKILL.md, unit_economics.py, example.json
+skills/founder-marketing/       SKILL.md
+skills/founder-brand/           SKILL.md
+skills/founder-ops/             SKILL.md
+skills/founder-launch/          SKILL.md
+skills/founder-plan/            SKILL.md, compile.py
+tests/                          the tests for every tool
 ```
 
 Your own files live in `founder/` in your project. The skills read each other's.

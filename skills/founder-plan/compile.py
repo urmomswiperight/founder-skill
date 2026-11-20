@@ -32,6 +32,7 @@ SECTIONS = [  # (file in founder/, heading, which skill writes it)
     ("summary.md", "Summary", "founder-plan"),
     ("board.md", "What the board said", "founder-board"),
     ("competitors.md", "The competition", "founder-competitors"),
+    ("differentiation.md", "Differentiation (The Purple Cow)", "founder-differentiation"),
     ("panel/results.md", "The buyer panel", "founder-consumer"),
     ("pricing.md", "Pricing", "founder-pricing"),
     ("offer.md", "The offer", "founder-offer"),
