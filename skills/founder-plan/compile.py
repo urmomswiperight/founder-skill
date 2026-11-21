@@ -41,6 +41,7 @@ SECTIONS = [  # (file in founder/, heading, which skill writes it)
     ("brand.md", "Brand", "founder-brand"),
     ("ops.md", "Operations", "founder-ops"),
     ("launch.md", "Launch plan", "founder-launch"),
+    ("vision.md", "Long-term vision (Horizons & 7 Powers)", "founder-vision"),
 ]
 
 

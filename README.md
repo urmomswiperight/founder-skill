@@ -7,6 +7,7 @@ signup, no API key, nothing to connect.
 `skills/founder-consumer` `skills/founder-launch` `skills/founder-pricing`
 `skills/founder-offer` `skills/founder-competitors` `skills/founder-brand`
 `skills/founder-ops` `skills/founder-plan` `skills/founder-differentiation`
+`skills/founder-vision`
 
 One of them is your board of directors, trained on the frameworks of Alex
 Hormozi, Peter Thiel and Steve Jobs. One is your marketing director. One is your
@@ -65,6 +66,7 @@ The tools need Python 3.8 or newer. Nothing to pip install.
 | `/founder-brand` | Brand Designer | Name candidates with the trademark, domain and handle checks to run, a voice, a promise and a brief for the look. |
 | `/founder-ops` | Operations Manager | Suppliers, staffing, day-one routines, tools, the permits to check and a risk register, feeding real costs back to the CFO. |
 | `/founder-launch` | Launch Lead | A cheap real-world test first, then a dated countdown, the launch-day run sheet and the first 30 days. |
+| `/founder-vision` | Long-Range Strategist | Multi-horizon strategy: applies Hamilton Helmer's *7 Powers*, McKinsey's Three Horizons, Jim Collins' Flywheel, and Taleb's Antifragile premortem to turn day-one survival into a 10-year compounding moat. |
 | `/founder-plan` | Business Planner | Compiles everything into one business plan with a verdict computed from the numbers: Profitable, Not yet or Incomplete. |
 
 ## How to use it
@@ -73,7 +75,7 @@ Run them in this order. Each one reads what the others wrote, in a `founder/`
 folder in your project.
 
 ```
-board -> competitors -> differentiation -> consumer -> pricing -> offer -> cfo -> marketing -> brand -> ops -> launch -> plan
+board -> competitors -> differentiation -> consumer -> pricing -> offer -> cfo -> marketing -> brand -> ops -> launch -> vision -> plan
 ```
 
 An example: a matcha café in Toronto, iced matcha lattes at $6.50 a cup. (Every
@@ -105,7 +107,11 @@ input is in the example files in this repo, so you can run the tools on it.)
    **`/founder-launch`** turn it into a 30-day campaign, a name and a look, the
    suppliers and routines, and a dated launch that starts with a pop-up to test
    real buyers.
-9. **`/founder-plan`** compiles `founder/business-plan.md`. Its verdict is
+9. **`/founder-vision`** maps the Three Horizons (from a single retail spot to
+   proprietary cold-chain distribution and wholesale cafe supply contracts),
+   identifies the Counter-Positioning and Brand powers that shield it from coffee
+   chains, charts the compounding flywheel, and tests 10-year antifragility.
+10. **`/founder-plan`** compiles `founder/business-plan.md`. Its verdict is
    computed, not written: Profitable only if every unit earns money, year 1 makes
    a profit, break-even fits capacity and enough of the panel buys.
 
@@ -181,6 +187,7 @@ skills/founder-marketing/       SKILL.md
 skills/founder-brand/           SKILL.md
 skills/founder-ops/             SKILL.md
 skills/founder-launch/          SKILL.md
+skills/founder-vision/          SKILL.md, powers.md
 skills/founder-plan/            SKILL.md, compile.py
 tests/                          the tests for every tool
 ```
